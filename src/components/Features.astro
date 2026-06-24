@@ -1,0 +1,62 @@
+---
+import FeatureCard from "./FeatureCard.astro"
+
+const feather = `<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-feather-icon lucide-feather"><path d="M12.67 19a2 2 0 0 0 1.416-.588l6.154-6.172a6 6 0 0 0-8.49-8.49L5.586 9.914A2 2 0 0 0 5 11.328V18a1 1 0 0 0 1 1z"/><path d="M16 8 2 22"/><path d="M17.5 15H9"/></svg>`
+const bolt = `<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-zap-icon lucide-zap"><path d="M4 14a1 1 0 0 1-.78-1.63l9.9-10.2a.5.5 0 0 1 .86.46l-1.92 6.02A1 1 0 0 0 13 10h7a1 1 0 0 1 .78 1.63l-9.9 10.2a.5.5 0 0 1-.86-.46l1.92-6.02A1 1 0 0 0 11 14z"/></svg>`
+const theme = `<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-palette-icon lucide-palette"><path d="M12 22a1 1 0 0 1 0-20 10 9 0 0 1 10 9 5 5 0 0 1-5 5h-2.25a1.75 1.75 0 0 0-1.4 2.8l.3.4a1.75 1.75 0 0 1-1.4 2.8z"/><circle cx="13.5" cy="6.5" r=".5" fill="currentColor"/><circle cx="17.5" cy="10.5" r=".5" fill="currentColor"/><circle cx="6.5" cy="12.5" r=".5" fill="currentColor"/><circle cx="8.5" cy="7.5" r=".5" fill="currentColor"/></svg>`
+const cpu = `<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-palette-icon lucide-palette"><path d="M12 22a1 1 0 0 1 0-20 10 9 0 0 1 10 9 5 5 0 0 1-5 5h-2.25a1.75 1.75 0 0 0-1.4 2.8l.3.4a1.75 1.75 0 0 1-1.4 2.8z"/><circle cx="13.5" cy="6.5" r=".5" fill="currentColor"/><circle cx="17.5" cy="10.5" r=".5" fill="currentColor"/><circle cx="6.5" cy="12.5" r=".5" fill="currentColor"/><circle cx="8.5" cy="7.5" r=".5" fill="currentColor"/></svg>`
+const tools = `<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-wrench-icon lucide-wrench"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.106-3.105c.32-.322.863-.22.983.218a6 6 0 0 1-8.259 7.057l-7.91 7.91a1 1 0 0 1-2.999-3l7.91-7.91a6 6 0 0 1 7.057-8.259c.438.12.54.662.219.984z"/></svg>`
+const clean = `<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-brush-icon lucide-brush"><path d="m11 10 3 3"/><path d="M6.5 21A3.5 3.5 0 1 0 3 17.5a2.62 2.62 0 0 1-.708 1.792A1 1 0 0 0 3 21z"/><path d="M9.969 17.031 21.378 5.624a1 1 0 0 0-3.002-3.002L6.967 14.031"/></svg>`
+---
+
+
+<section class="features-section">
+    <div class="features-header">
+        <h1 class="main-heading">Features</h1>
+        <span>Built by a developer who was frustrated with everything else.</span>
+    </div>
+    <div class="cards-container">
+        <FeatureCard svg={cpu} desc="Doesn't Matter What Display It Is. So, You Can Focus On What Matters" title="Hardware Agnostic" />
+        <FeatureCard svg={bolt} desc="No If-Else. Write Clean Code." title="Event-Driven Architecture" />
+        <FeatureCard svg={theme} desc="Design Your Own Theme. Get Consistent Colors Everywhere." title="Theme System" />
+        <FeatureCard svg={tools} desc="Comes with Constraints Aware Drag & Drop Builder." title="Development Toolchain*" />
+        <FeatureCard svg={feather} desc="15KB RAM. 21.9% Flash. Full working UI on ESP32." title="Light On Resources" />
+        <FeatureCard svg={clean} desc="Write Once. Deploy Everywhere" title="Clean & Intutive API" />
+    </div>
+</section>
+
+
+<style>
+
+    .features-section{
+        display: flex;
+        flex-direction: column;
+        padding: var(--space-2xl) var(--space-xl);
+        align-items: center;
+    }
+
+    .features-header{
+        text-align: center;
+        margin-bottom: var(--space-xl);
+    }
+
+    .features-header h1{
+        font-weight: 7.5rem;
+        font-weight: 700;
+        margin-bottom: var(--space-sm);
+    }
+
+    .features-header span{
+        color: var(--color-text-muted);
+        font-size: 1rem;
+    }
+
+    .cards-container{
+        display: grid;
+        grid-auto-rows: 1fr;
+        gap: var(--space-lg);
+        width: 100%;
+        max-width: 1100px;
+        grid-template-columns: repeat(3, 1fr);
+    }
+</style>

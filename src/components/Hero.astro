@@ -1,0 +1,86 @@
+---
+// src/components/Hero.astro
+import CodeWindow from "../components/CodeWindow.astro"
+---
+
+<section class="hero">
+    <div class="hero-left">
+        <h1 class="heading">Next-Gen UI for Edge Devices.</h1>
+        <p class="hero-feature">Hardware independent. Low memory footprint. Event-driven architecture. Build completely custom widgets for microcontrollers using a clean, simple API.</p>
+
+        <div class="stats">
+            <span>15KB RAM</span>
+            <span>.</span>
+            <span>MIT Forever</span>
+            <span>.</span>
+            <span>ESP32 Tested</span>
+        </div>
+
+        <div class="btns">
+            <a href="https://raghav67816.github.io/NanoUI/" class="btn-primary">Get Started</a>
+            <a href="https://github.com/Raghav67816/NanoUI" class="btn-secondary">Source Code</a>
+        </div>
+
+    </div>
+    <div class="hero-right">
+        <CodeWindow />
+    </div>
+</section>
+
+<style>
+    .hero{
+        display: grid;
+        grid-template-columns: 60fr 40fr;
+        gap: var(--space-xl);
+        padding: var(--space-2xl) var(--space-xl);
+        min-height: 90vh;
+    }
+
+    .stats{
+        display: flex;
+        align-content: center;
+        gap: var(--space-md);
+        font-family: var(--font-mono);
+        font-size: 0.85rem;
+        color: var(--color-text-muted);
+        margin-bottom: var(--space-lg);
+    }
+
+    .btn-primary{
+        background: var(--color-text);
+        color: var(--color-bg);
+        padding: var(--space-sm) var(--space-lg);
+        border-radius: var(--radius-md);
+        text-decoration: none;
+        font-weight: 600;
+        font-size: 0.9rem;
+        transition: opacity var(--transition);
+    }
+
+    .btn-primary:hover{
+        opacity: 0.85;
+    }
+
+    .btn-secondary {
+        text-decoration: none;
+        display: flex;
+        align-items: center;
+        gap: var(--space-xs);
+        color: var(--color-text) !important;
+        background: var(--color-surface);
+        border: 1px solid var(--color-border);
+        padding: var(--space-sm) var(--space-lg);
+        border-radius: var(--radius-md);
+        transition: border-color var(--transition) !important;
+    }
+
+    .btn-secondary:hover {
+        color: var(--color-text);
+    }
+
+    .btns{
+        display: flex;
+        gap: var(--space-md);
+        align-items: center;
+    }
+</style>

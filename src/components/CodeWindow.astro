@@ -1,0 +1,136 @@
+<div class="window">
+    <div class="window-bar">
+        <span class="filename">main.cpp</span>
+        <div class="dots">
+            <span class="dot-red"></span>
+            <span class="dot-yellow"></span>
+            <span class="dot-green"></span>
+        </div>
+    </div>
+    <pre><code><span class="cpp-comment">// Include NanoUI</span>
+#include <span class="cpp-string">"core/Stack.h"</span>
+#include <span class="cpp-string">"core/OLEDisplayX.h"</span>
+#include <span class="cpp-string">"widgets/Label.h"</span>
+#include <span class="cpp-string">"input/GPIOButton.h"</span>
+<span class="cpp-comment">// ...</span>
+
+<span class="cpp-comment">// Theme</span>
+<span class="cpp-type">Color</span> white = &#123;<span class="cpp-num">255</span>, <span class="cpp-num">255</span>, <span class="cpp-num">255</span>&#125;;
+<span class="cpp-type">Theme</span> appTheme = &#123;
+  .background = black,
+  .foreground = white,
+  <span class="cpp-comment">// ...</span>
+&#125;;
+
+<span class="cpp-comment">// Display + App</span>
+<span class="cpp-type">OLEDisplayX</span> display(<span class="cpp-num">128</span>, <span class="cpp-num">64</span>, &oled);
+<span class="cpp-type">Stack</span> app(display, gfx, &appTheme);
+
+<span class="cpp-comment">// Screens + Widgets</span>
+<span class="cpp-type">Screen</span> home_screen(&display, <span class="cpp-string">"SYSTEM STATUS"</span>);
+<span class="cpp-type">Label</span> temp_val(<span class="cpp-num">10</span>, <span class="cpp-num">10</span>, <span class="cpp-string">"0"</span>, white);
+<span class="cpp-type">GPIOButton</span> btn_ok(<span class="cpp-num">0</span>, millis);
+
+<span class="cpp-kw">void</span> <span class="cpp-fn">setup</span>() &#123;
+  home_screen.<span class="cpp-fn">addChild</span>(&temp_val);
+  app.<span class="cpp-fn">addScreen</span>(home_screen);
+  app.<span class="cpp-fn">goTo</span>(display, home_screen, gfx);
+&#125;
+
+<span class="cpp-kw">void</span> <span class="cpp-fn">loop</span>() &#123;
+  app.<span class="cpp-fn">renderApp</span>(gfx);
+  <span class="cpp-comment">// Your Logic Here</span>
+  display.<span class="cpp-fn">flush</span>();
+&#125;</code></pre>
+</div>
+
+<style>
+    .window-bar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 6px;
+        padding: 10px 16px;
+        background: var(--color-surface);
+        border-bottom: 1px solid var(--color-border);
+    }
+
+    .window {
+        display: block;
+        background: var(--color-code-bg);
+        border: 1px solid var(--color-border);
+        border-radius: var(--radius-lg);
+        overflow: hidden;
+    }
+
+    .filename {
+        font-family: var(--font-mono);
+    }
+
+    .dots {
+        display: flex;
+        gap: var(--space-xs);
+    }
+
+    .dot-red,
+    .dot-green,
+    .dot-yellow {
+        display: inline-block;
+        width: 12px;
+        min-width: 12px;
+        min-height: 12px;
+        height: 12px;
+        border-radius: 50%;
+        flex-shrink: 0;
+    }
+
+    .dot-red {
+        background: #ff5f57;
+    }
+
+    .dot-yellow {
+        background: #febc2e;
+    }
+
+    .dot-green {
+        background: #28c840;
+    }
+
+    pre {
+        padding: var(--space-lg);
+        font-size: 0.85rem;
+        line-height: 1.8;
+        overflow-y: auto;
+        max-height: 300px; /* adjust to taste */
+        overflow-x: auto;
+        background: transparent !important;
+    }
+
+    .cpp-comment {
+        color: #6b6b8a;
+    }
+
+    .cpp-code {
+        color: #e8e8f0;
+        font-weight: 600;
+    }
+
+    .cpp-kw {
+        color: #ff79c6;
+    } /* void, int, return */
+    .cpp-type {
+        color: #8be9fd;
+    } /* Theme, Color, Button */
+    .cpp-fn {
+        color: #50fa7b;
+    } /* function names */
+    .cpp-string {
+        color: #f1fa8c;
+    } /* "strings" */
+    .cpp-num {
+        color: #bd93f9;
+    } /* numbers */
+    .cpp-comment {
+        color: #6b6b8a;
+    } /* // comments */
+</style>
