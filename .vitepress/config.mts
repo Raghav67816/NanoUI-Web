@@ -23,6 +23,8 @@ export default defineConfig({
             items: [
               {text: "Button", link: "/Fundamentals/Widgets/Button.md"},
               {text: "Label", link: "/Fundamentals/Widgets/Label.md"},
+              {text: "Progress Bar", link: "/Fundamentals/Widgets/Progress Bar.md"},
+              {text: "ListWidget", link: "/Fundamentals/Widgets/ListWidget.md"},
             ],
             collapsed: true
           }
