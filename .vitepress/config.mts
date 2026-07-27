@@ -4,7 +4,7 @@ import { defineConfig } from 'vitepress'
 export default defineConfig({
   title: "NanoUI",
   description: "Documentation For NanoUI Framework",
-  base: '/nanoui-web/',
+  base: '/NanoUI-Web/',
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
     nav: [
@@ -18,14 +18,14 @@ export default defineConfig({
       {
         text: "Fundamentals",
         items: [
-          // {text: "Screen", link: "/Fundamentals/Screen.md"},
+          {text: "Screen", link: "/Fundamentals/Screen.md"},
           {
             text: "Widgets",
             items: [
-              // {text: "Button", link: "/Fundamentals/Widgets/Button.md"},
-              // {text: "Label", link: "/Fundamentals/Widgets/Label.md"},
-              // {text: "Progress Bar", link: "/Fundamentals/Widgets/Progress Bar.md"},
-              // {text: "ListWidget", link: "/Fundamentals/Widgets/ListWidget.md"},
+              {text: "Button", link: "/Fundamentals/Widgets/Button.md"},
+              {text: "Label", link: "/Fundamentals/Widgets/Label.md"},
+              {text: "Progress Bar", link: "/Fundamentals/Widgets/Progress Bar.md"},
+              {text: "ListWidget", link: "/Fundamentals/Widgets/ListWidget.md"},
             ],
             collapsed: true
           }
