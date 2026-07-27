@@ -4,6 +4,7 @@ import { defineConfig } from 'vitepress'
 export default defineConfig({
   title: "NanoUI",
   description: "Documentation For NanoUI Framework",
+  base: '/nanoui-web/',
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
     nav: [
