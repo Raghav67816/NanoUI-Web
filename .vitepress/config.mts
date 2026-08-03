@@ -35,6 +35,7 @@ export default defineConfig({
       {
         text: "Tools",
         items: [
+          {text: "NanoFS", link: "/Tools/NanoFS.md"},
           {text: "Font Converter", link: "/Tools/Font Converter.md"}
         ],
         collapsed: true
