@@ -31,6 +31,13 @@ export default defineConfig({
           }
         ],
         collapsed: true
+      },
+      {
+        text: "Tools",
+        items: [
+          {text: "Font Converter", link: "/Tools/Font Converter.md"}
+        ],
+        collapsed: true
       }
     ],
 
