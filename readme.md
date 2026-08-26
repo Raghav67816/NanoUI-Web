@@ -22,7 +22,12 @@ To write or update documentation:
  npm install
  ```
 
-To edit configuration please see `.vitepress/config.mts`
+To edit configuration please see `.vitepress/config.mt`
+
+- To run locally
+  ```bash
+  npm run dev
+  ```
 
 ## Directory Structure
 
