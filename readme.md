@@ -26,7 +26,7 @@ To edit configuration please see `.vitepress/config.mt`
 
 - To run locally
   ```bash
-  npm run dev
+  npm run docs:dev
   ```
 
 ## Directory Structure
